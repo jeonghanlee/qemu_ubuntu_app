@@ -35,6 +35,12 @@ $ cd ..
 $ sh install_ubuntu.sh
 ```
 
+
+|![1png](docs/Ubuntu_boot.png)|
+| :---: |
+|**Figure 1** Ubuntu Boot Screenshot|
+
+
 ## Setup the compile QEMU into the local folder 
 
 ```bash
@@ -58,6 +64,13 @@ $ sudo ditto Contents/ /Applications/QEMU_Ubuntu.app/Contents
 $ sudo ditto qemu /Applications/QEMU_Ubuntu.app/qemu
 $ sudo ditto drive/ /Applications/QEMU_Ubuntu.app/drive
 ```
+ 
+
+|![2png](docs/Ubuntu_QEMU_on_M1.png)|
+| :---: |
+|**Figure 2** Running Ubuntu through QEMU on Apple M1 screenshot|
+
+ 
  
 Enjoy!
 
