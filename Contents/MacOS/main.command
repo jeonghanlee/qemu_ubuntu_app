@@ -1,30 +1,26 @@
 #!/bin/sh
-# Phoebus launcher for Mac OS X
-# Original code comes from 
-# https://github.com/kasemir/phoebus-sns/blob/master/app_template/Contents/MacOS/main.command
+# References, please see README.md
 # 
-# Modified Version Feb 20, 2021
 # Jeong Han Lee
+# jeonghan.lee@gmail.com 
+# Feb 26, 2021
 #
-# Location of this script
-# cd .. pwd determines the full path
-# even if called from shell with relative path
-# 
+#
+
 MACOS="$( cd "$(dirname "$0")" || exit ; pwd -P )"
-BASE=${MACOS%/*/*}
+TOP=${MACOS%/*/*}
 
-# QEMU TOP
-TOP="${BASE}/QEMU"
-CONTENTS="${BASE}/Contents"
-DRIVE="${BASE}/drive"
+# 
+QEMU="${TOP}/qemu"
+CONTENTS="${TOP}/Contents"
+DRIVE="${TOP}/drive"
 
-PATH="$TOP:$PATH"
-HOSTNAME=$(/bin/hostname)
+PATH="${QEMU}:$PATH"
 
 export PATH
 
 ICNS_FILE="${CONTENTS}/Resources/ubuntu-mac.icns"
-DOCK_NAME="QEMU Ubuntu"
+DOCK_NAME="QEMU Ubuntu 20.04"
 
 qemu-system-aarch64 \
   -monitor stdio \
