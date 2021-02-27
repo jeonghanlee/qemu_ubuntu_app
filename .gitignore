@@ -1,9 +1,9 @@
-qemu-src
-*.tgz
-*.iso
-*.img
-*.fd
-*.qcw2
-*.qcow2
+qemu/*
 .DS_Store
-*.swp
+*swp
+*.fd
+*.tar.gz
+*.iso
+*-src
+*.img
+*.qcow2

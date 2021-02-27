@@ -2,6 +2,7 @@
 
 ## QEMU
 
+The all procedures are defined in  <https://gist.github.com/niw/e4313b9c14e968764a52375da41b4278#enable-the-internet
 
 ```bash
 $ sudo port install ninja pkgconfig glib2 pixman wget
@@ -9,11 +10,11 @@ $ sudo port install ninja pkgconfig glib2 pixman wget
 $ pwd
 /Users/JeongLee/github/qemu_ubuntu_app
 
-$ git clone https://git.qemu.org/git/qemu.git qemu_src
+$ git clone https://git.qemu.org/git/qemu.git qemu-src
 
 $ cd qemu-src
-git checkout d0dddab40e -b wip/hvf
-curl 'https://patchwork.kernel.org/series/418581/mbox/'|git am --3way
+$ git checkout d0dddab40e -b wip/hvf
+$ curl 'https://patchwork.kernel.org/series/418581/mbox/'|git am --3way
 
 $ mkdir build
 $ cd build
@@ -32,18 +33,31 @@ $ dd if=QEMU_VARS.fd of=pflash1.img conv=notrunc
 $ wget -c https://cdimage.ubuntu.com/releases/20.04/release/ubuntu-20.04.2-live-server-arm64.iso
 $ cd ..
 $ sh install_ubuntu.sh
-
 ```
+
+## Setup the compile QEMU into the local folder 
+
+```bash
+$ mkdir qemu
+$ cp -r qemu-src/build/* qemu/
+$$ sh Contents/MacOS/main.command
+```
+
+## Build App, and deploy into `/Applications`.
+
 
 ```bash
 $ pwd
 /Users/JeongLee/github/qemu_ubuntu_app
 
-$ rm -f drive/*.tgz
+$ rm -f drive/*.gz
 $ rm -f drive/*.fd
 $ rm -f drive/*.iso
 $ sudo mkdir /Applications/QEMU_Ubuntu.app
-$ sudo ditto * /Applications/QEMU_Ubuntu.app
+$ sudo ditto Contents/ /Applications/QEMU_Ubuntu.app/Contents
+$ sudo ditto qemu /Applications/QEMU_Ubuntu.app/qemu
+$ sudo ditto drive/ /Applications/QEMU_Ubuntu.app/drive
 ```
  
+Enjoy!
 

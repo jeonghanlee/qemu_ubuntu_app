@@ -10,7 +10,7 @@
 #
 TOP="$( cd "$(dirname "$0")" || exit ; pwd -P )"
 
-QEMU="${TOP}/qemu_src/build"
+QEMU="${TOP}/qemu-src/build"
 DRIVE="${TOP}/drive"
 
 PATH="$QEMU:$PATH"
