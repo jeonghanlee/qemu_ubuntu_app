@@ -1,8 +1,10 @@
 # Ubuntu 20.04, QEMU on Apple Silicon Mac
 
-## QEMU
 
-The all procedures are defined in  <https://gist.github.com/niw/e4313b9c14e968764a52375da41b4278#enable-the-internet
+## QEMU / Ubuntu Setup for Apple M1
+
+The original reference is at <https://gist.github.com/niw/e4313b9c14e968764a52375da41b4278#enable-the-internet>.
+Please check it for further descriptions. The following procedure is tuned for me. 
 
 ```bash
 $ sudo port install ninja pkgconfig glib2 pixman wget
@@ -41,15 +43,15 @@ $ sh install_ubuntu.sh
 |**Figure 1** Ubuntu Boot Screenshot|
 
 
-## Setup the compile QEMU into the local folder 
+## Setup the compiled QEMU into the local folder for the next step
 
 ```bash
 $ mkdir qemu
 $ cp -r qemu-src/build/* qemu/
-$$ sh Contents/MacOS/main.command
+$ sh Contents/MacOS/main.command
 ```
 
-## Build App, and deploy into `/Applications`.
+## Build Apple Aplications, and deploy into `/Applications`.
 
 
 ```bash
