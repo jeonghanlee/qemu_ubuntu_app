@@ -1,7 +1,7 @@
-# Ubuntu 20.04, QEMU on Apple Silicon Mac
+# Ubuntu 20.04 ARM64, QEMU on Apple Silicon Mac
 
 
-## QEMU / Ubuntu Setup for Apple M1
+## QEMU / Ubuntu ARM64 Setup for Apple M1
 
 The original reference is at <https://gist.github.com/niw/e4313b9c14e968764a52375da41b4278#enable-the-internet>.
 Please check it for further descriptions. The following procedure is tuned for me. 
